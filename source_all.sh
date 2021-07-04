@@ -1,15 +1,13 @@
 #!/bin/bash
 
-'''
-Made to source all scripts
-'''
+set -x
+scriptsArr=(common set_up_git)
 
-scriptsArr=(common)
-
-function main(){
-    for i in "${scriptsArr[@]}";do
+function main() {
+    for i in "${scriptsArr[@]}"; do
         source ${i}.sh
     done
 }
 
 main
+set +x
